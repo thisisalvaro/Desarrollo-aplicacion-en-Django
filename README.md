@@ -20,5 +20,3 @@ Markdown también permite crear tablas para presentar datos estructurados.
 |------------|---------------------|----------|
 | Proyecto A | Un proyecto genial  | Activo   |
 | Proyecto B | Otro proyecto       | Inactivo |
-
-```
