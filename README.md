@@ -10,6 +10,7 @@ Este es un proyecto realizado para aprender las bases de django
 ```python
 def hola_mundo():
     print("Hola, Mundo!")
+```
 
 ### 6. **Tablas**
 Markdown también permite crear tablas para presentar datos estructurados.
