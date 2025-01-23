@@ -1,0 +1,16 @@
+<!-- catalogo/templates/catalogo/libro_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Libros</title>
+</head>
+<body>
+    <h1>Listado de Libros</h1>
+    <ul>
+        {% for libro in libros %}
+            <li><a href="{% url 'detalles_libro' libro.pk %}">{{ libro.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Volver al inicio</a>
+</body>
+</html>

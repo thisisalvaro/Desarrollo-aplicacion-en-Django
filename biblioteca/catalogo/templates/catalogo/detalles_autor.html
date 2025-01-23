@@ -1,0 +1,18 @@
+<!-- catalogo/templates/catalogo/detalles_autor.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Autor</title>
+</head>
+<body>
+    <h1>{{ autor.nombre }} {{ autor.apellidos }}</h1>
+    <p>Fecha de Nacimiento: {{ autor.fecha_nacimiento }}</p>
+    <h2>Libros por este autor:</h2>
+    <ul>
+        {% for libro in libros %}
+            <li><a href="{% url 'detalles_libro' libro.pk %}">{{ libro.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'listado_autores' %}">Volver al listado de autores</a>
+</body>
+</html>

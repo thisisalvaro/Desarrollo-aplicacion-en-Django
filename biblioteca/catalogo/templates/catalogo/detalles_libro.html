@@ -1,0 +1,15 @@
+<!-- catalogo/templates/catalogo/detalles_libro.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Libro</title>
+</head>
+<body>
+    <h1>{{ libro.titulo }}</h1>
+    <p>Año de Publicación: {{ libro.año_publicacion }}</p>
+    <p>Género: {{ libro.genero }}</p>
+    <p>ISBN: {{ libro.isbn }}</p>
+    <p>Autor: <a href="{% url 'detalles_autor' libro.autor.pk %}">{{ libro.autor.nombre }} {{ libro.autor.apellidos }}</a></p>
+    <a href="{% url 'index' %}">Volver al inicio</a>
+</body>
+</html>
