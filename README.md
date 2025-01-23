@@ -16,8 +16,9 @@ def hola_mundo():
 Markdown también permite crear tablas para presentar datos estructurados.
 
 ```markdown
-| Nombre     | Descripción       | Estado   |
-|------------|-------------------|----------|
-| Proyecto A | Un proyecto genial| Activo   |
-| Proyecto B | Otro proyecto     | Inactivo |
+| Nombre     | Descripción         | Estado   |
+|------------|---------------------|----------|
+| Proyecto A | Un proyecto genial  | Activo   |
+| Proyecto B | Otro proyecto       | Inactivo |
+
 ```
