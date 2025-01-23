@@ -1,5 +1,21 @@
 # Desarrollo-aplicacion-en-Django
 Este es un proyecto realizado para aprender las bases de django
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Aprendiendo markdown
 - Instalación
 - Uso
 - Contribuir
