@@ -13,7 +13,8 @@ Este es un proyecto realizado para aprender las bases de django
 1. Paso uno
 2. Paso dos
 3. Paso tres
-[Imagen de ejemplo]([https://url-de-la-imagen.com/imagen.png](https://chatgpt.com/))
+
+![Imagen de ejemplo](https://ethic.es/wp-content/uploads/2023/03/imagen.jpg)
 ```python
 def hola_mundo():
     print("Hola, Mundo!")
