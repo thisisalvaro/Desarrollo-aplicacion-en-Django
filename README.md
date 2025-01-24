@@ -13,7 +13,7 @@ Este es un proyecto realizado para aprender las bases de django
 1. Paso uno
 2. Paso dos
 3. Paso tres
-![Imagen de ejemplo](https://url-de-la-imagen.com/imagen.png)
+[Imagen de ejemplo]([https://url-de-la-imagen.com/imagen.png](https://chatgpt.com/))
 ```python
 def hola_mundo():
     print("Hola, Mundo!")
