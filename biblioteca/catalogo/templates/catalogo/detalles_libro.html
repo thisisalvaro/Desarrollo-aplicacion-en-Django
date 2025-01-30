@@ -10,6 +10,6 @@
     <p>Género: {{ libro.genero }}</p>
     <p>ISBN: {{ libro.isbn }}</p>
     <p>Autor: <a href="{% url 'detalles_autor' libro.autor.pk %}">{{ libro.autor.nombre }} {{ libro.autor.apellidos }}</a></p>
-    <a href="{% url 'index' %}">Volver al inicio</a>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
 </body>
 </html>

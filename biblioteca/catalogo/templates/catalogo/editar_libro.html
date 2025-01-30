@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Libro</title>
+</head>
+<body>
+    <h1>Editar Libro</h1>
+    <form method="post" action="{% url 'editar_libro' libro.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
+</body>
+</html>

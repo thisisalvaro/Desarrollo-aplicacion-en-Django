@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrar Libro</title>
+</head>
+<body>
+    <h1>Borrar Libro</h1>
+    <p>¿Está seguro de que desea borrar el libro "{{ libro.titulo }}"?</p>
+    <form method="post" action="{% url 'borrar_libro' libro.pk %}">
+        {% csrf_token %}
+        <button type="submit">Borrar</button>
+    </form>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
+</body>
+</html>

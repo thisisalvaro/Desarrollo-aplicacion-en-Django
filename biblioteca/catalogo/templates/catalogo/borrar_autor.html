@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrar Autor</title>
+</head>
+<body>
+    <h1>Borrar Autor</h1>
+    <p>¿Está seguro de que desea borrar al autor "{{ autor.nombre }} {{ autor.apellidos }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Borrar</button>
+    </form>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
+</body>
+</html>

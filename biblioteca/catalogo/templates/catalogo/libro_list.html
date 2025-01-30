@@ -9,8 +9,9 @@
     <ul>
         {% for libro in libros %}
             <li><a href="{% url 'detalles_libro' libro.pk %}">{{ libro.titulo }}</a></li>
+            <li><a href="{% url 'editar_libro' libro.pk %}">Editar</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'index' %}">Volver al inicio</a>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
 </body>
 </html>

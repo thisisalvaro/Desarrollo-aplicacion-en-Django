@@ -1,4 +1,3 @@
-<!-- catalogo/templates/catalogo/listado_autores.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +8,10 @@
     <ul>
         {% for autor in autores %}
             <li><a href="{% url 'detalles_autor' autor.pk %}">{{ autor.nombre }} {{ autor.apellidos }}</a></li>
+            <li><a href="{% url 'editar_autor' autor.pk %}">Editar</a></li>
+            <li><a href="{% url 'borrar_autor' autor.pk %}">Borrar</a></li>
         {% endfor %}
     </ul>
-    <a href="{% url 'index' %}">Volver al inicio</a>
+    <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
 </body>
 </html>
