@@ -1,15 +1,19 @@
 <!-- catalogo/templates/catalogo/libro_list.html -->
+ {%load static%}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Listado de Libros</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
 </head>
 <body>
     <h1>Listado de Libros</h1>
     <ul>
         {% for libro in libros %}
-            <li><a href="{% url 'detalles_libro' libro.pk %}">{{ libro.titulo }}</a></li>
-            <li><a href="{% url 'editar_libro' libro.pk %}">Editar</a></li>
+            <li><a href="{% url 'detalles_libro' libro.pk %}">{{ libro.titulo }}</a>
+            <label> | </label>
+            <a href="{% url 'editar_libro' libro.pk %}">Editar</a>
+            </li>
         {% endfor %}
     </ul>
     <a href="{% url 'pagina_principal' %}">Volver al inicio</a>

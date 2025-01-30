@@ -1,15 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Listado de Autores</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
 </head>
 <body>
     <h1>Listado de Autores</h1>
     <ul>
         {% for autor in autores %}
-            <li><a href="{% url 'detalles_autor' autor.pk %}">{{ autor.nombre }} {{ autor.apellidos }}</a></li>
-            <li><a href="{% url 'editar_autor' autor.pk %}">Editar</a></li>
-            <li><a href="{% url 'borrar_autor' autor.pk %}">Borrar</a></li>
+            <li><a href="{% url 'detalles_autor' autor.pk %}">{{ autor.nombre }} {{ autor.apellidos }}</a>
+                <label> | </label>
+            <a href="{% url 'editar_autor' autor.pk %}">Editar</a>
+            <label> | </label>
+            <a href="{% url 'borrar_autor' autor.pk %}">Borrar</a>
+            </li>
         {% endfor %}
     </ul>
     <a href="{% url 'pagina_principal' %}">Volver al inicio</a>
