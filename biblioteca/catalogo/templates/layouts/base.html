@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block styles %}{% endblock %}
+    <title>{% block title %}Mi Página Web{% endblock %}</title>
+<style>
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+        <nav>
+            <a href="{% url 'listado_libros' %}">Ver Libros</a>
+            <a href="{% url 'listado_autores' %}">Ver Autores</a>
+        </nav>
+
+        {% if user.is_authenticated %}
+        <li>User: {{ user.username }}</li>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesión</button>
+
+    <!--    <a href="{% url 'logout' %}">Cerrar sesión</a> -->
+        {% else %}
+        <li><a href="{% url 'login' %}?next={{ request.path }}">Iniciar sesión</a></li>
+        {% endif %}
+
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

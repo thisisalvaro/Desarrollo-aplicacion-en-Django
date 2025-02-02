@@ -1,8 +1,10 @@
 <!-- catalogo/templates/catalogo/detalles_libro.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Detalles del Libro</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
 </head>
 <body>
     <h1>{{ libro.titulo }}</h1>

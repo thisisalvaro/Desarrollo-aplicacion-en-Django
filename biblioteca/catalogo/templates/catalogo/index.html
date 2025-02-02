@@ -1,15 +1,19 @@
 <!-- catalogo/templates/catalogo/index.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Catálogo de Libros</title>
-</head>
-<body>
-    <h1>Bienvenido al Catálogo de Libros</h1>
-    <h2>Libros:</h2>
+{% extends "layouts/base.html" %}
+
+{% block title %}Mi Página Web{% endblock %}
+
+    {% block content %}
+    {% if perms.catalogo.view_libro%}
     <a href="{% url 'listado_libros' %}">Ver Libros</a>
+    {% endif %}
+    {% if perms.catalogo.view_autor%}
     <a href="{% url 'listado_autores' %}">Ver Autores</a>
+    {% endif %}
+    {% if perms.catalogo.add_libro%}
     <a href="{% url 'crear_libro' %}">Crear Libro</a>
+    {% endif %}
+    {% if perms.catalogo.add_autor%}
     <a href="{% url 'crear_autor' %}">Crear Autor</a>
-</body>
-</html>
+    {% endif %}
+    {% endblock %}
