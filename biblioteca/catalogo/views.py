@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Autor, Libro
 from django.contrib.auth.decorators import login_required, permission_required
 from .forms import LibroForm, AutorForm
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from .models import Reserva
+from .serializers import AutorSerializer, LibroSerializer, ReservaSerializer
 
 @login_required
 def pagina_principal(request):
@@ -90,3 +96,31 @@ def borrar_autor(request, pk):
         autor.delete()
         return redirect('pagina_principal')
     return render(request, 'catalogo/borrar_autor.html', {'autor': autor})
+
+# Vistas para la API REST
+
+class AutorViewSet(viewsets.ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
+
+class LibroViewSet(viewsets.ModelViewSet):
+    queryset = Libro.objects.all()
+    serializer_class = LibroSerializer
+
+class ReservaViewSet(viewsets.ModelViewSet):
+    queryset = Reserva.objects.all()
+    serializer_class = ReservaSerializer
+
+    @action(detail=False, methods=['post'], permission_classes=[IsAuthenticated])
+    def crear_reserva(self, request):
+        libro_id = request.data.get('libro')
+        cantidad = request.data.get('cantidad')
+        email = request.data.get('email')
+        libro = Libro.objects.get(id=libro_id)
+        if libro.stock >= int(cantidad):
+            libro.stock -= int(cantidad)
+            libro.save()
+            reserva = Reserva.objects.create(libro=libro, cantidad=cantidad, email=email)
+            return Response({'status': 'reserva creada'}, status=201)
+        else:
+            return Response({'status': 'stock insuficiente'}, status=400)

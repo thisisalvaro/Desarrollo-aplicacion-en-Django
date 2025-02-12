@@ -1,19 +1,22 @@
 <!-- catalogo/templates/catalogo/index.html -->
-{% extends "layouts/base.html" %}
+ {%load static%}
 
-{% block title %}Mi Página Web{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Libros</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Bienvenido al Catálogo de Libros</h1>
+    <h2>Libros:</h2>
+<ul>
 
-    {% block content %}
-    {% if perms.catalogo.view_libro%}
-    <a href="{% url 'listado_libros' %}">Ver Libros</a>
-    {% endif %}
-    {% if perms.catalogo.view_autor%}
-    <a href="{% url 'listado_autores' %}">Ver Autores</a>
-    {% endif %}
-    {% if perms.catalogo.add_libro%}
-    <a href="{% url 'crear_libro' %}">Crear Libro</a>
-    {% endif %}
-    {% if perms.catalogo.add_autor%}
-    <a href="{% url 'crear_autor' %}">Crear Autor</a>
-    {% endif %}
-    {% endblock %}
+<li>            <a href="{% url 'listado_libros' %}">Ver Libros</a> </li> 
+<li>             <a href="{% url 'listado_autores' %}">Ver Autores</a></li> 
+<li>             <a href="{% url 'crear_libro' %}">Crear Libro</a></li> 
+<li>            <a href="{% url 'crear_autor' %}">Crear Autor</a></li> 
+
+<ul>
+</body>
+</html>
