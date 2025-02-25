@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>{{ libro.titulo }}</h1>
-    <p>Año de Publicación: {{ libro.año_publicacion }}</p>
+    <p>Año de Publicación: {{ libro.anio_publicacion }}</p>
     <p>Género: {{ libro.genero }}</p>
     <p>ISBN: {{ libro.isbn }}</p>
     <p>Autor: <a href="{% url 'detalles_autor' libro.autor.pk %}">{{ libro.autor.nombre }} {{ libro.autor.apellidos }}</a></p>
